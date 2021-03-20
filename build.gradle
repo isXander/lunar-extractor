@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '6.1.0'
+}
+
+mainClassName = 'co.uk.isxander.bulkrename.BulkRename'
+group 'co.uk.isxander'
+version '1.0-SNAPSHOT'
+
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+shadowJar {
+    archiveClassifier.set('shadow')
+    archiveVersion.set('')
+}
+
+compileJava {
+    sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    compile 'com.google.guava:guava:30.1.1-jre'
+}
+
